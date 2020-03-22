@@ -10,7 +10,7 @@ int main(int argc, char *argv[]){
 	
 	infile1.open(argv[1]);
 	infile2.open(argv[2]);
-	outfile.open("output1.txt");
+	outfile.open(argv[3]);
 	
 	infile1 >> file1;
 	infile2 >> file2;
