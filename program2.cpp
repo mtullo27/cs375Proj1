@@ -36,6 +36,14 @@ int main(int argc, char *argv[]){
 	struct timeval start, end; 
 	gettimeofday(&start, NULL); 
 	ios_base::sync_with_stdio(false);
-  recursion(file1, file2, size1, size2);
+	
+  	outfile << "The length of the LCS is " << recursion(file1, file2, size1, size2) << endl;
+	
+	gettimeofday(&end, NULL); 
+	double time_taken; 
+    	time_taken = (end.tv_sec - start.tv_sec) * 1e6; 
+    	time_taken = (time_taken + (end.tv_usec - start.tv_usec)) * 1e-6; 
+    	outfile << "Time taken by program is : " << fixed << time_taken << setprecision(6); 
+	outfile << " sec" << endl;
   
 }
