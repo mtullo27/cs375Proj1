@@ -1,6 +1,6 @@
 #include "program1.h"
 
-const int max = 100;
+const int big = 100;
 int max(int a, int b){
  if(a>=b)
    return a;
@@ -8,7 +8,7 @@ int max(int a, int b){
    return b;
 }
 
-int memo(string s1, string s2, int i1, int i2, int mem[][max]){
+int memo(string s1, string s2, int i1, int i2, int mem[][big]){
   if(i1 == 0 || i2 == 0)
     return 0;
   if(mem[i1-1][i2-1] != -1)
@@ -39,7 +39,7 @@ int main(int argc, char *argv[]){
 	
 	int size1 = file1.length();
 	int size2 = file2.length();
-  int grid[size1][max];
+  int grid[size1][big];
   
   memset(grid, -1, sizeof(grid));
   
