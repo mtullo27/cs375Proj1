@@ -10,6 +10,7 @@ int main(int argc, char *argv[]){
 	
 	infile1.open(argv[1]);
 	infile2.open(argv[2]);
+	outfile.open("output1.txt");
 	
 	infile1 >> file1;
 	infile2 >> file2;
@@ -38,9 +39,9 @@ int main(int argc, char *argv[]){
 		if(size1<=10 || size2<=10){
 			for(int i = 0; i<=size1; i++){
 				for(int j = 0; j<=size2; j++){
-					cout << ret[i][j]<< " ";
+					outfile << ret[i][j]<< " ";
 				}
-				cout << endl;
+				outfile << endl;
 			}
 			int max = ret[size1][size2];
 			char lcs[max+1];
@@ -57,18 +58,18 @@ int main(int argc, char *argv[]){
 				else
 					j--;
 			}
-			cout << lcs << endl;
+			outfile << lcs << endl;
 		}
 		else
-			cout << ret[size1][size2] << endl;
+			outfile << ret[size1][size2] << endl;
 		gettimeofday(&end, NULL); 
 		double time_taken; 
     time_taken = (end.tv_sec - start.tv_sec) * 1e6; 
     time_taken = (time_taken + (end.tv_usec -  
                               start.tv_usec)) * 1e-6; 
   
-    cout << "Time taken by program is : " << fixed 
+    outfile << "Time taken by program is : " << fixed 
          << time_taken << setprecision(6); 
-    cout << " sec" << endl;	
+    outfile << " sec" << endl;	
 		
 }
