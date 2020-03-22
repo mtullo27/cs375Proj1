@@ -11,7 +11,7 @@ int recursion(string s1, string s2, int i1, int i2){
  if(i1 == 0 || i2 ==0)
    return 0;
   if(s1[i1-1] == s2[i2-1])
-    return recursion(s1, s2, i1-1, i2-1);
+    return recursion(s1, s2, i1-1, i2-1)+1;
   else
     return max (recursion(s1, s2, i1, i2 - 1), recursion(s1, s2, i1 - 1, i2));
 }
