@@ -32,7 +32,7 @@ run2: program2
 	./program2 filex.txt filey.txt output2.txt
 
 run3: program3
-	./program2 filex.txt filey.txt output3.txt
+	./program3 filex.txt filey.txt output3.txt
 
 clean:
 	rm -rf *.o $(proj) program2 program3

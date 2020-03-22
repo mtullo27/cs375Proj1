@@ -12,7 +12,7 @@ int memo(string s1, string s2, int i1, int i2, int mem[][big]){
   if(i1 == 0 || i2 == 0)
     return 0;
   if(mem[i1-1][i2-1] != -1)
-    retuen mem[i1-1][i2-1];
+    return mem[i1-1][i2-1];
   if(s1[i1-1] == s2[i2-1]){
     mem[i1-1][i2-1] = memo(s1, s2, i1-1, i2-1, mem)+1;
     return mem[i1-1][i2-1];
@@ -20,6 +20,7 @@ int memo(string s1, string s2, int i1, int i2, int mem[][big]){
   else { 
     mem[i1-1][i2-1] = max(memo(s1, s2, i1, i2-1, mem), memo(s1, s2, i1-1, i2, mem)); 
     return mem[i1-1][i2-1];
+  }
 }
 
 int main(int argc, char *argv[]){
